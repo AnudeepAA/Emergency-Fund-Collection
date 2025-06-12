@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Helping Hand Organization{% endblock %}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <style>
+        .navbar-brand img {
+            width: 50px;
+        }
+        .navbar-buttons {
+            margin-left: auto;
+        }
+        .navbar-buttons.hidden {
+            display: none;
+        }
+        .about-section, .services-section, .contact-section {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+        }
+        .about-section h1, .services-section h1, .contact-section h1 {
+            color: #343a40;
+        }
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer .footer-links a {
+            color: #adb5bd;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .footer .footer-links a:hover {
+            color: #fff;
+        }
+        .hero-section {
+            background: url('{{ url_for('static', filename='img/hero-background.jpg') }}') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .hero-section h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero-section p {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo"> Helping Hand
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item {% if request.endpoint == 'home' %}active{% endif %}">
+                    <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                </li>
+                <li class="nav-item dropdown {% if request.endpoint in ['web_design', 'seo', 'consulting'] %}active{% endif %}">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Services
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ url_for('web_design') }}">Web Design</a>
+                        <a class="dropdown-item" href="{{ url_for('seo') }}">SEO</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ url_for('consulting') }}">Consulting</a>
+                    </div>
+                </li>
+                <li class="nav-item {% if request.endpoint == 'about' %}active{% endif %}">
+                    <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                </li>
+                <li class="nav-item {% if request.endpoint == 'contact' %}active{% endif %}">
+                    <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+                </li>
+            </ul>
+            <div class="navbar-buttons ml-auto {% if request.endpoint == 'signup' %}hidden{% endif %}">
+                <a class="btn btn-outline-light mr-2" href="{{ url_for('signup') }}">Sign Up</a>
+                <a class="btn btn-outline-light" href="{{ url_for('login') }}">Log In</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container">
+        {% block content %}
+        
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1>Welcome to Helping Hand</h1>
+            <p>Your safety net in times of medical emergency</p>
+        </div>
+
+        <!-- About Section -->
+        <div class="about-section">
+            <h1>About Helping Hand</h1>
+            <p>Helping Hand is a nonprofit organization dedicated to supporting college students and parents during medical emergencies. We believe that no one should have to choose between their education and their health. Our mission is to provide financial assistance and resources to those in need, ensuring that unexpected medical expenses don’t derail the future of our beneficiaries.</p>
+        </div>
+
+        <!-- Services Section -->
+        <div class="services-section">
+            <h1>Our Services</h1>
+            <p>At Helping Hand, we offer various forms of support to ease the burden of medical expenses:</p>
+            <ul>
+                <li><strong>Financial Assistance:</strong> We provide direct financial aid to cover medical bills, prescriptions, and other related expenses.</li>
+                <li><strong>Resource Guidance:</strong> We connect students and parents with additional resources and services that can help them manage their health and finances.</li>
+                <li><strong>Emergency Fundraising:</strong> We assist in setting up crowdfunding campaigns to gather additional support from communities and networks.</li>
+                <li><strong>Advocacy:</strong> We advocate for policies and practices that reduce the financial strain of medical emergencies on students and families.</li>
+            </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h1>Contact Us</h1>
+            <p>If you or someone you know is facing a medical emergency and needs assistance, please reach out to us. We’re here to provide support and guidance.</p>
+            <p>Email: <a href="mailto:support@helpinghand.org">support@helpinghand.org</a> | Phone: (123) 456-7890</p>
+            <p>Address: 123 Helping Hand Lane, City, State, ZIP</p>
+        </div>
+        {% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+        <p>&copy; 2024 Helping Hand Organization. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript and dependencies -->
+   
+</body>
+</html>

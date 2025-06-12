@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}Contact Us - Helping Hand Organization{% endblock %}
+
+{% block content %}
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <h1>Contact Us</h1>
+        <p>If you or someone you know is facing a medical emergency and needs assistance, please reach out to us. We’re here to provide support and guidance.</p>
+        <p>Email: <a href="mailto:support@helpinghand.org">support@helpinghand.org</a></p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Address: 123 Helping Hand Lane, City, State, ZIP</p>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form-section">
+        <h2>Get in Touch</h2>
+        <form action="{{ url_for('contact') }}" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </div>
+{% endblock %}

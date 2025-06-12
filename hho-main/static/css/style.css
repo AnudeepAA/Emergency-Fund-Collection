@@ -1,0 +1,216 @@
+/* General Styles */
+body {
+    background: url('/static/img/hho.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: rgb(226, 17, 17);
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #e90b0b;
+}
+
+p {
+    font-size: 20px; /* Reduced size for better readability */
+    line-height: 1.6;
+    color: #0a6ac9;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #2980B9; /* Slightly muted */
+}
+
+.navbar .navbar-brand {
+    color: #FFFFFF;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #ECF0F1;
+}
+
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:hover {
+    color: #1ABC9C;
+}
+
+.navbar-buttons .btn {
+    color: #ECF0F1;
+    border-color: #ECF0F1;
+}
+
+.navbar-buttons .btn:hover {
+    color: #2980B9;
+    background-color: #ECF0F1;
+}
+
+/* Sign Up & Login Page Styles */
+.signup-container, .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.signup-form, .login-form {
+    background: rgba(255, 255, 255, 0.9); /* Slightly less opacity */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    max-width: 500px;
+    width: 100%;
+}
+
+.signup-form h1, .login-form h1 {
+    margin-bottom: 1.5rem;
+    font-size: 24px;
+    color: #2980B9;
+}
+
+.invalid-feedback {
+    display: none;
+    color: #E74C3C;
+}
+
+.is-invalid ~ .invalid-feedback {
+    display: block;
+}
+
+/* Footer Styles */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #2980B9;
+    color: #ECF0F1;
+    padding: 20px 0;
+}
+
+.footer_links {
+    text-decoration: none;
+    color: #ECF0F1;
+    margin: 0 10px;
+}
+
+.footer_links:hover {
+    text-decoration: underline;
+}
+
+.contact {
+    color: #1ABC9C;
+    font-size: 14px;
+    letter-spacing: .3px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.Footer_1stone h2 {
+    color: #ECF0F1;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.Footer_1stone a {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* About Section Styles */
+.about-section {
+    padding: 4rem 2rem; /* Adjusted padding */
+    text-align: center;
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+.about-section h1 {
+    font-size: 32px; /* Slightly reduced size */
+    margin-bottom: 1.5rem;
+    color: #2980B9;
+}
+
+.about-section h3 {
+    font-size: 18px; /* Slightly smaller size */
+    color: #34495E;
+}
+
+/* Services Section Styles */
+.services-section {
+    padding: 4rem 2rem; /* Adjusted padding */
+    text-align: center;
+    background-color: #ECF0F1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+.services-section h1 {
+    font-size: 32px; /* Slightly reduced size */
+    margin-bottom: 1.5rem;
+    color: #2980B9;
+}
+
+.services-section p {
+    font-size: 18px;
+    color: #34495E;
+}
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 4rem 2rem; /* Adjusted padding */
+    text-align: center;
+    background-color: #1ABC9C;
+    color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+.contact-section h1 {
+    font-size: 32px; /* Slightly reduced size */
+    margin-bottom: 1.5rem;
+}
+
+.contact-section p {
+    font-size: 18px;
+}
+/* Image Gallery Styles */
+.image-gallery {
+    padding: 4rem 2rem; /* Adjust padding */
+    text-align: center;
+    background-color: #f8f9fa; /* Light background to contrast with images */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    margin-top: 30px; /* Space above the gallery */
+}
+
+.image-gallery h2 {
+    font-size: 36px;
+    margin-bottom: 2rem;
+    color: #2980B9;
+}
+
+.gallery-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between images */
+}
+
+.gallery-item {
+    flex: 1 1 300px; /* Flex basis for responsive layout */
+    max-width: 300px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.gallery-item p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #34495E;
+}

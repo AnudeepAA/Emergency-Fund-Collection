@@ -1,0 +1,10 @@
+DROP TABLE "users";
+DROP TABLE "volunteers";
+DROP TABLE "representatives";
+DROP TABLE "fund_rising_requests";
+DROP TABLE "accepted_fund_risings";
+DROP TABLE "monthly_collections";
+DROP TABLE "finance_history";
+DROP TABLE "upcoming_events";
+DROP TABLE "past_events";
+DROP TABLE "core_members";

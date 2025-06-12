@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+    <div class="signup-container">
+        <div class="signup-form">
+            <h1 class="text-center mb-4">Sign Up</h1>
+            {% if error %}
+                <h3 class="text-center mb-4">Error: {{error}}</h3>
+            {% endif %}
+            <form id="signupForm" action="{{ url_for('signup') }}" method="post">
+                <div class="form-group">
+                    <label for="id_no">ID No</label>
+                    <input type="text" class="form-control" id="id_no" name="id_no" placeholder="Enter your ID No" required>
+                    <div class="invalid-feedback">Please enter a valid ID No.</div>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+                    <div class="invalid-feedback">Please enter a valid username.</div>
+                </div>
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter your first name" required>
+                    <div class="invalid-feedback">Please enter your first name.</div>
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter your last name" required>
+                    <div class="invalid-feedback">Please enter your last name.</div>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile</label>
+                    <input type="tel" class="form-control" id="mobile" minlength="10" maxlength="10" name="mobile" placeholder="Enter your mobile number" required>
+                    <div class="invalid-feedback">Please enter a valid mobile number.</div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <div class="form-group">
+                    <label for="designation">Designation</label>
+                    <input type="text" class="form-control" id="designation" name="designation" placeholder="Enter your designation" required>
+                    <div class="invalid-feedback">Please enter your designation.</div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" minlength="8" id="password" name="password" placeholder="Enter your password" required>
+                    <div class="invalid-feedback">Please enter a password.</div>
+                </div>
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirm_password" minlength="8" name="confirm_password" placeholder="Confirm your password" required>
+                    <div class="invalid-feedback">Passwords must match.</div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('signupForm');
+
+            form.addEventListener('submit', function (event) {
+                var isValid = true;
+                var inputs = form.querySelectorAll('input');
+
+                inputs.forEach(function (input) {
+                    if (!input.checkValidity()) {
+                        isValid = false;
+                        input.classList.add('is-invalid');
+                    } else {
+                        input.classList.remove('is-invalid');
+                    }
+                });
+
+                if (!isValid) {
+                    event.preventDefault(); // Prevent form submission if any input is invalid
+                }
+            });
+
+            var inputs = form.querySelectorAll('input');
+            inputs.forEach(function (input) {
+                input.addEventListener('input', function () {
+                    if (input.checkValidity()) {
+                        input.classList.remove('is-invalid');
+                    } else {
+                        input.classList.add('is-invalid');
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}

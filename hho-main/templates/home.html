@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}Home - Helping Hand Organization{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Welcome to Helping Hand</h1>
+        <p>Your safety net in times of medical emergency</p>
+    </div>
+
+    <!-- About Section -->
+    <div class="about-section">
+        <h1>About Helping Hand</h1>
+        <p>Helping Hand is a nonprofit organization dedicated to supporting college students and parents during medical emergencies. We believe that no one should have to choose between their education and their health. Our mission is to provide financial assistance and resources to those in need, ensuring that unexpected medical expenses don’t derail the future of our beneficiaries.</p>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services-section">
+        <h1>Our Services</h1>
+        <p>At Helping Hand, we offer various forms of support to ease the burden of medical expenses:</p>
+        <ul>
+            <li><strong>Financial Assistance:</strong> We provide direct financial aid to cover medical bills, prescriptions, and other related expenses.</li>
+            <li><strong>Resource Guidance:</strong> We connect students and parents with additional resources and services that can help them manage their health and finances.</li>
+            <li><strong>Emergency Fundraising:</strong> We assist in setting up crowdfunding campaigns to gather additional support from communities and networks.</li>
+            <li><strong>Advocacy:</strong> We advocate for policies and practices that reduce the financial strain of medical emergencies on students and families.</li>
+        </ul>
+    </div>
+
+    <!-- Image Gallery Section -->
+    <div class="image-gallery">
+        <h2>Our Impact</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='img/image1.jpg') }}" alt="Image 1">
+                <p>Description of Image 1</p>
+            </div>
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='img/image2.jpg') }}" alt="Image 2">
+                <p>Description of Image 2</p>
+            </div>
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='img/image3.jpg') }}" alt="Image 3">
+                <p>Description of Image 3</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <h1>Contact Us</h1>
+        <p>If you or someone you know is facing a medical emergency and needs assistance, please reach out to us. We’re here to provide support and guidance.</p>
+        <p>Email: <a href="mailto:support@helpinghand.org">support@helpinghand.org</a> | Phone: (123) 456-7890</p>
+        <p>Address: 123 Helping Hand Lane, City, State, ZIP</p>
+    </div>
+{% endblock %}
